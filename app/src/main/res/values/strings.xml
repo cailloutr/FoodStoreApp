@@ -10,4 +10,24 @@
     <string name="fragment_menu">Menu</string>
     <string name="fragment_orders">Orders</string>
     <string name="fragment_profile">Profile</string>
+    <string name="user_image">User\'s image</string>
+    <string name="delivery_to">Deliver to</string>
+    <string name="drop_down_menu_for_addresses">Drop down menu for addresses</string>
+    <string name="especial_offers_banner">Especial Offers</string>
+    <string name="label_special_offers">Special Offers</string>
+    <string name="see_all_label">See all</string>
+    <string name="pizza_menu_item">Pizza</string>
+    <string name="pizza_menu_item_cd">Pizza menu item</string>
+    <string name="menu_item_lasagna">Lasagna</string>
+    <string name="menu_item_drinks">Drinks</string>
+    <string name="menu_item_more">More</string>
+    <string name="discount_label">Discount!!</string>
+    <string name="add_item_to_shopping_cart">Add item to shopping cart</string>
+    <string name="item_image">Iten\'s Image</string>
+    <string name="add_to_cart_button">Add to cart button</string>
+    <string name="shopping_cart_button">Shopping cart button</string>
+    <string name="notification_button">Notification\'s button</string>
+    <string name="menu_item_lasagna_button">Menu Item lasagna\'s button</string>
+    <string name="menu_item_drink_button">Menu item drink\'s button</string>
+    <string name="menu_item_button_for_other_items">Menu item button for other items</string>
 </resources>

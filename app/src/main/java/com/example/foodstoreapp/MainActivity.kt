@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             R.id.profileFragment
         ))
 
+        //supportActionBar?.hide()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

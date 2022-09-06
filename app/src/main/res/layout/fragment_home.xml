@@ -1,14 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        tools:context=".ui.home.HomeFragment">
 
-</FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/border_margin"
+            android:layout_marginTop="@dimen/border_margin"
+            android:elevation="12dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:contentDescription="@string/user_image"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars[0]" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/delivery_to_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_between_elements"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            app:layout_constraintStart_toEndOf="@id/user_view"
+            app:layout_constraintTop_toTopOf="@id/user_view"
+            tools:text="@string/delivery_to" />
+
+        <TextView
+            android:id="@+id/address_shortcut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_between_elements"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintBottom_toBottomOf="@id/user_view"
+            app:layout_constraintStart_toEndOf="@id/user_view"
+            tools:text="Times Square" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/drop_down_menu_for_addresses"
+            android:src="@drawable/ic_arrow_drop_down_24"
+            app:layout_constraintBottom_toBottomOf="@id/address_shortcut"
+            app:layout_constraintStart_toEndOf="@id/address_shortcut"
+            app:layout_constraintTop_toTopOf="@id/address_shortcut"
+            app:tint="@color/orange_500" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_shopping_bag"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/border_margin"
+            android:layout_marginEnd="@dimen/border_margin"
+            android:elevation="12dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/user_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_view">
+
+            <ImageView
+                android:id="@+id/iv_shopping_bag"
+                style="@style/Widget.FoodStoreApp.ButtonCard"
+                app:tint="@color/orange_500"
+                tools:src="@drawable/ic_shopping_bag_24"
+                android:contentDescription="@string/shopping_cart_button" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_notifications_bell"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/border_margin"
+            android:layout_marginEnd="@dimen/border_margin"
+            android:elevation="12dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/user_view"
+            app:layout_constraintEnd_toStartOf="@id/cv_shopping_bag"
+            app:layout_constraintTop_toTopOf="@id/user_view">
+
+            <ImageView
+                android:id="@+id/iv_notifications_bell"
+                style="@style/Widget.FoodStoreApp.ButtonCard"
+                app:tint="@color/orange_500"
+                tools:src="@drawable/ic_notifications_none_24"
+                android:contentDescription="@string/notification_button" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/border_margin"
+            android:layout_marginTop="@dimen/medium_margin_between_elements"
+            android:elevation="@dimen/search_bar_elevation"
+            app:cardCornerRadius="@dimen/search_bar_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_view">
+
+            <SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray"
+                android:queryHint="@string/app_name" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/label_special_offers"
+            style="@style/HomeLabel.FoodStoreApp.TextView"
+            android:text="@string/label_special_offers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_search_bar" />
+
+        <TextView
+            android:id="@+id/all_especial_offers_button"
+            style="@style/SeeMore.FoodStoreApp.TextView"
+            android:text="@string/see_all_label"
+            app:layout_constraintBottom_toBottomOf="@id/label_special_offers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/label_special_offers" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_special_offer_banner"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginHorizontal="@dimen/border_margin"
+            android:layout_marginTop="@dimen/medium_margin_between_elements"
+            android:elevation="@dimen/banner_elevation"
+            app:cardCornerRadius="@dimen/banner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_special_offers">
+
+            <ImageView
+                android:id="@+id/special_offer_banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/especial_offers_banner"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_menu_item_pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/larger_margin_between_elements"
+            android:contentDescription="@string/pizza_menu_item_cd"
+            android:src="@drawable/ic_pizza_svgrepo_com"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_item_pastas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_special_offer_banner" />
+
+        <TextView
+            android:id="@+id/menu_item_pizza_label"
+            style="@style/MenuItem.FoodStoreApp.TextView"
+            android:text="@string/pizza_menu_item"
+            app:layout_constraintEnd_toEndOf="@id/iv_menu_item_pizza"
+            app:layout_constraintStart_toStartOf="@id/iv_menu_item_pizza"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_item_pizza" />
+
+        <ImageView
+            android:id="@+id/iv_menu_item_pastas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/larger_margin_between_elements"
+            android:src="@drawable/ic_lasagna_svgrepo_com"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_item_drinks"
+            app:layout_constraintStart_toEndOf="@id/iv_menu_item_pizza"
+            app:layout_constraintTop_toBottomOf="@id/cv_special_offer_banner"
+            android:contentDescription="@string/menu_item_lasagna_button" />
+
+        <TextView
+            android:id="@+id/menu_item_lasagna_label"
+            style="@style/MenuItem.FoodStoreApp.TextView"
+            android:text="@string/menu_item_lasagna"
+            app:layout_constraintEnd_toEndOf="@id/iv_menu_item_pastas"
+            app:layout_constraintStart_toStartOf="@id/iv_menu_item_pastas"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_item_pastas" />
+
+        <ImageView
+            android:id="@+id/iv_menu_item_drinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/larger_margin_between_elements"
+            android:src="@drawable/ic_drink_svgrepo_com"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_item_more"
+            app:layout_constraintStart_toEndOf="@id/iv_menu_item_pastas"
+            app:layout_constraintTop_toBottomOf="@id/cv_special_offer_banner"
+            android:contentDescription="@string/menu_item_drink_button" />
+
+        <TextView
+            android:id="@+id/menu_item_drinks_label"
+            style="@style/MenuItem.FoodStoreApp.TextView"
+            android:text="@string/menu_item_drinks"
+            app:layout_constraintEnd_toEndOf="@id/iv_menu_item_drinks"
+            app:layout_constraintStart_toStartOf="@id/iv_menu_item_drinks"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_item_drinks" />
+
+        <ImageView
+            android:id="@+id/iv_menu_item_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/larger_margin_between_elements"
+            android:src="@drawable/ic_rice_svgrepo_com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_menu_item_drinks"
+            app:layout_constraintTop_toBottomOf="@id/cv_special_offer_banner"
+            android:contentDescription="@string/menu_item_button_for_other_items" />
+
+        <TextView
+            android:id="@+id/menu_item_more_label"
+            style="@style/MenuItem.FoodStoreApp.TextView"
+            android:text="@string/menu_item_more"
+            app:layout_constraintEnd_toEndOf="@id/iv_menu_item_more"
+            app:layout_constraintStart_toStartOf="@id/iv_menu_item_more"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_item_more" />
+
+        <View
+            android:id="@+id/divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/larger_margin_between_elements"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/menu_item_pizza_label" />
+
+        <TextView
+            android:id="@+id/discount_label"
+            style="@style/HomeLabel.FoodStoreApp.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discount_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
+
+        <TextView
+            android:id="@+id/all_discount_button"
+            style="@style/SeeMore.FoodStoreApp.TextView"
+            android:text="@string/see_all_label"
+            app:layout_constraintBottom_toBottomOf="@id/discount_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/discount_label" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_promo_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin_between_elements"
+            android:layout_marginHorizontal="@dimen/border_margin"
+            app:layout_constraintTop_toBottomOf="@id/discount_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/promo_item_view"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

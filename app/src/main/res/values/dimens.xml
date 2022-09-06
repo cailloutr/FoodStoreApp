@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="border_margin">16dp</dimen>
+    <dimen name="margin_between_elements">8dp</dimen>
+    <dimen name="medium_margin_between_elements">16dp</dimen>
+    <dimen name="larger_margin_between_elements">24dp</dimen>
+    <dimen name="banner_radius">36dp</dimen>
+    <dimen name="search_bar_radius">16dp</dimen>
+    <dimen name="search_bar_elevation">12dp</dimen>
+    <dimen name="banner_elevation">12dp</dimen>
+</resources>
