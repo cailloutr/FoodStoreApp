@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MenuItem.FoodStoreApp.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.FoodStoreApp.MenuItemNameTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxEms">8</item>
+        <item name="android:maxLines">1</item>
     </style>
 
-    <style name="HomeLabel.FoodStoreApp.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.FoodStoreApp.HomeLabelTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/border_margin</item>
@@ -17,7 +20,7 @@
         <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
     </style>
 
-    <style name="SeeMore.FoodStoreApp.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.FoodStoreApp.SeeMoreTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginEnd">@dimen/border_margin</item>
@@ -26,14 +29,71 @@
     </style>
 
     <style name="Widget.FoodStoreApp.ButtonCard" parent="Widget.MaterialComponents.CardView">
-        <item name="android:layout_width">40dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">@dimen/circular_button_side</item>
+        <item name="android:layout_height">@dimen/circular_button_side</item>
         <item name="android:scaleType">center</item>
     </style>
 
     <style name="Widget.FoodStoreApp.SmallButtonCard" parent="Widget.MaterialComponents.CardView">
-        <item name="android:layout_width">30dp</item>
-        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">@dimen/small_circular_button_side</item>
+        <item name="android:layout_height">@dimen/small_circular_button_side</item>
         <item name="android:scaleType">center</item>
+    </style>
+
+    <style name="Widget.FoodStoreApp.PriceTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:textSize">@dimen/price_textView</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.FoodStoreApp.BadgeTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+        <item name="android:layout_marginStart">@dimen/margin_between_elements</item>
+        <item name="android:textSize">@dimen/badge_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingStart">@dimen/badge_padding</item>
+        <item name="android:paddingEnd">@dimen/badge_padding</item>
+        <item name="android:elevation">@dimen/default_elevation</item>
+        <item name="android:background">@drawable/promo_badge</item>
+    </style>
+
+    <style name="Widget.FoodStoreApp.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/badge_text</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Widget.FOodStoreApp.ItemNameDetailedTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadline5</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">@dimen/border_margin</item>
+        <item name="android:layout_marginEnd">@dimen/border_margin</item>
+        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+    </style>
+
+    <style name="Widget.FoodStoreApp.ViewDivider" parent="Widget.Material3.MaterialDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">@dimen/larger_margin_between_elements</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">?attr/dividerHorizontal</item>
+    </style>
+
+    <style name="Widget.FoodStoreApp.SmallLabelTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_between_elements</item>
     </style>
 </resources>

@@ -6,6 +6,14 @@
     <dimen name="larger_margin_between_elements">24dp</dimen>
     <dimen name="banner_radius">36dp</dimen>
     <dimen name="search_bar_radius">16dp</dimen>
+    <dimen name="default_elevation">12dp</dimen>
     <dimen name="search_bar_elevation">12dp</dimen>
     <dimen name="banner_elevation">12dp</dimen>
+    <dimen name="default_corner_radius">12dp</dimen>
+    <dimen name="badge_text">14sp</dimen>
+    <dimen name="badge_padding">4dp</dimen>
+    <dimen name="price_textView">18sp</dimen>
+    <dimen name="circular_button_side">40dp</dimen>
+    <dimen name="small_circular_button_side">30dp</dimen>
+    <dimen name="item_card_view_padding">8dp</dimen>
 </resources>

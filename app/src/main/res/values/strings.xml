@@ -30,4 +30,7 @@
     <string name="menu_item_lasagna_button">Menu Item lasagna\'s button</string>
     <string name="menu_item_drink_button">Menu item drink\'s button</string>
     <string name="menu_item_button_for_other_items">Menu item button for other items</string>
+    <string name="promo_badge">Promo</string>
+    <string name="ingredients_label">Ingredients:</string>
+    <string name="add_to_cart_label">Add to cart</string>
 </resources>
