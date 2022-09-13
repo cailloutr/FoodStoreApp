@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.2475" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2335" />
+        <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_image_placeholder.xml" value="0.201" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_notifications_none_24.xml" value="0.1505" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_pizza_svgrepo_com.xml" value="0.2475" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/drawable/ic_star.xml" value="0.2475" />
@@ -13,7 +14,7 @@
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/detailed_item_layout.xml" value="0.2967079948696024" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_detailerd_item.xml" value="0.25" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
+        <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_menu.xml" value="0.1" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_orders.xml" value="0.3625" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
         <entry key="..\:/Users/caiot/AndroidStudioProjects/FoodStoreApp/app/src/main/res/layout/list_item_view.xml" value="0.2967079948696024" />

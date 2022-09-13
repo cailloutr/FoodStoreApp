@@ -2,6 +2,7 @@
 <resources>
     <dimen name="border_margin">16dp</dimen>
     <dimen name="margin_between_elements">8dp</dimen>
+    <dimen name="half_margin_between_elements">4dp</dimen>
     <dimen name="medium_margin_between_elements">16dp</dimen>
     <dimen name="larger_margin_between_elements">24dp</dimen>
     <dimen name="banner_radius">36dp</dimen>

@@ -1,88 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/border_margin"
-    app:cardCornerRadius="@dimen/default_corner_radius"
-    app:cardElevation="@dimen/banner_elevation">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.foodstoreapp.network.Item" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/item_card_view_padding">
+        android:layout_marginEnd="@dimen/border_margin"
+        android:layout_marginBottom="@dimen/border_margin"
+        app:cardCornerRadius="@dimen/default_corner_radius"
+        app:cardElevation="2dp">
 
-        <TextView
-            android:id="@+id/promo_indicator"
-            android:text="@string/promo_badge"
-            app:layout_constraintStart_toStartOf="@id/cv_item_image"
-            app:layout_constraintTop_toTopOf="@id/cv_item_image"
-            style="@style/Widget.FoodStoreApp.BadgeTextView" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_item_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/default_corner_radius"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="@dimen/item_card_view_padding">
 
-            <ImageView
-                android:id="@+id/menu_item_image"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:contentDescription="@string/item_image"
-                tools:srcCompat="@tools:sample/avatars[2]" />
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/promo_indicator"
+                android:text="@string/promo_badge"
+                app:layout_constraintStart_toStartOf="@id/cv_item_image"
+                app:layout_constraintTop_toTopOf="@id/cv_item_image"
+                style="@style/Widget.FoodStoreApp.BadgeTextView" />
 
-        <TextView
-            android:id="@+id/tv_plate_name"
-            style="@style/Widget.FoodStoreApp.MenuItemNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_between_elements"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cv_item_image"
-            tools:text="Cool name for a food" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_item_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/default_corner_radius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_star"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="@dimen/margin_between_elements"
-            app:chipBackgroundColor="@color/white"
-            app:chipIcon="@drawable/ic_star"
-            app:chipIconTint="#FFC107"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_plate_name"
-            tools:text="1.5 (450)" />
+                <ImageView
+                    android:id="@+id/menu_item_image"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:contentDescription="@string/item_image"
+                    app:imageUrl="@{item.imageUrl}"
+                    tools:srcCompat="@tools:sample/avatars[2]" />
+            </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/tv_item_price"
-            style="@style/Widget.FoodStoreApp.PriceTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chip_star"
-            tools:text="$6.00" />
+            <TextView
+                android:id="@+id/tv_plate_name"
+                style="@style/Widget.FoodStoreApp.MenuItemNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_item_image"
+                android:text="@{item.name}"
+                tools:text="Cool name for a food" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_notifications_bell"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:elevation="@dimen/banner_elevation"
-            app:cardCornerRadius="@dimen/default_corner_radius"
-            app:layout_constraintBottom_toBottomOf="@id/tv_item_price"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_item_price">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_star"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/half_margin_between_elements"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/ic_star"
+                app:chipIconTint="#FFC107"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_plate_name"
+                android:text="@{item.starsCount}"
+                tools:text="1.5 (450)" />
 
-            <ImageView
-                android:id="@+id/iv_notifications_bell"
-                style="@style/Widget.FoodStoreApp.SmallButtonCard"
-                android:contentDescription="@string/add_to_cart_button"
-                app:tint="@color/orange_500"
-                tools:src="@drawable/ic_add_shopping_cart" />
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tv_item_price"
+                style="@style/Widget.FoodStoreApp.PriceTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chip_star"
+                android:text="@{item.formattedPrice}"
+                tools:text="$6.00" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_notifications_bell"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:elevation="@dimen/banner_elevation"
+                app:cardCornerRadius="@dimen/default_corner_radius"
+                app:layout_constraintBottom_toBottomOf="@id/tv_item_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_item_price">
+
+                <ImageView
+                    android:id="@+id/iv_notifications_bell"
+                    style="@style/Widget.FoodStoreApp.SmallButtonCard"
+                    android:contentDescription="@string/add_to_cart_button"
+                    app:tint="@color/orange_500"
+                    android:src="@drawable/ic_add_shopping_cart" />
+            </androidx.cardview.widget.CardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

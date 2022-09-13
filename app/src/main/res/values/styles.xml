@@ -43,7 +43,7 @@
     <style name="Widget.FoodStoreApp.PriceTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+        <item name="android:layout_marginTop">@dimen/half_margin_between_elements</item>
         <item name="android:textColor">@color/orange_500</item>
         <item name="android:textSize">@dimen/price_textView</item>
         <item name="android:textStyle">bold</item>
