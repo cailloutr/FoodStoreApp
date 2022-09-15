@@ -1,5 +1,6 @@
 package com.example.foodstoreapp.network
 
+import com.example.foodstoreapp.model.Item
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -29,7 +30,7 @@ private val retrofit = Retrofit.Builder()
 interface FoodStoreApiService {
 
     @GET("foodStoreApi.json")
-    suspend fun getItems(): List<Item>
+    suspend fun getItems(): NetworkItemContainer
 }
 
 object FoodStoreApi {

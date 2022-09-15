@@ -6,7 +6,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodstoreapp.R
-import com.example.foodstoreapp.network.Item
+import com.example.foodstoreapp.model.Item
 import com.example.foodstoreapp.ui.home.ItemListAdapter
 
 @BindingAdapter("imageUrl")
