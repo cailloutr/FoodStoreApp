@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="item"
+            name="promoItem"
             type="com.example.foodstoreapp.model.Item" />
 
     </data>
@@ -44,7 +44,7 @@
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:contentDescription="@string/item_image"
-                    app:imageUrl="@{item.imageUrl}"
+                    app:imageUrl="@{promoItem.imageUrl}"
                     tools:srcCompat="@tools:sample/avatars[2]" />
             </androidx.cardview.widget.CardView>
 
@@ -56,7 +56,7 @@
                 android:layout_marginTop="@dimen/margin_between_elements"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cv_item_image"
-                android:text="@{item.name}"
+                android:text="@{promoItem.name}"
                 tools:text="Cool name for a food" />
 
             <com.google.android.material.chip.Chip
@@ -77,7 +77,7 @@
                 style="@style/Widget.FoodStoreApp.PriceTextView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/chip_star"
-                android:text="@{item.formattedPrice}"
+                android:text="@{promoItem.formattedPrice}"
                 tools:text="$6.00" />
 
             <androidx.cardview.widget.CardView

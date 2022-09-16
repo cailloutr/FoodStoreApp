@@ -1,89 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.menu.MenuFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/menu_tool_bar"
+    <data>
+
+        <variable
+            name="menuViewModel"
+            type="com.example.foodstoreapp.ui.menu.MenuViewModel" />
+    </data>
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <HorizontalScrollView
-        android:id="@+id/chip_group_horizontal_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/border_margin"
-        android:layout_marginBottom="@dimen/margin_between_elements"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menu_tool_bar">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.menu.MenuFragment">
 
-        <com.google.android.material.chip.ChipGroup
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/menu_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.FoodStoreApp.Chip"
-                android:layout_marginEnd="@dimen/margin_between_elements"
-                android:text="@string/pizza_menu_item"
-                app:checkedIconVisible="false"
-                app:chipBackgroundColor="@color/white"
-                app:chipIcon="@drawable/ic_pizza_svgrepo_com"
-                app:chipIconSize="20dp"
-                app:chipIconVisible="true"
-                app:chipStrokeColor="@color/orange_500"
-                app:chipStrokeWidth="2dp" />
+            <HorizontalScrollView
+                android:id="@+id/chip_group_horizontal_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/border_margin"
+                android:layout_marginBottom="@dimen/margin_between_elements"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/menu_tool_bar">
 
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.FoodStoreApp.Chip"
-                android:layout_marginEnd="@dimen/margin_between_elements"
-                android:text="@string/menu_item_lasagna"
-                app:checkedIconVisible="false"
-                app:chipBackgroundColor="@color/white"
-                app:chipIcon="@drawable/ic_lasagna_svgrepo_com"
-                app:chipIconVisible="true"
-                app:chipStrokeColor="@color/orange_500"
-                app:chipStrokeWidth="2dp" />
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:singleLine="true"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.FoodStoreApp.Chip"
-                android:layout_marginEnd="@dimen/margin_between_elements"
-                android:text="@string/menu_item_drinks"
-                app:checkedIconVisible="false"
-                app:chipBackgroundColor="@color/white"
-                app:chipIcon="@drawable/ic_drink_svgrepo_com"
-                app:chipIconVisible="true"
-                app:chipStrokeColor="@color/orange_500"
-                app:chipStrokeWidth="2dp" />
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:id="@+id/chip_pizza"-->
+<!--                        style="@style/Widget.FoodStoreApp.Chip"-->
+<!--                        android:layout_marginEnd="@dimen/margin_between_elements"-->
+<!--                        android:text="@string/pizza_menu_item"-->
+<!--                        app:checkedIconVisible="false"-->
+<!--                        app:chipBackgroundColor="@color/white"-->
+<!--                        app:chipIcon="@drawable/ic_pizza_svgrepo_com"-->
+<!--                        app:chipIconSize="20dp"-->
+<!--                        app:chipIconVisible="true"-->
+<!--                        app:chipStrokeColor="@color/orange_500"-->
+<!--                        app:chipStrokeWidth="2dp" />-->
 
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.FoodStoreApp.Chip"
-                android:text="@string/menu_item_more"
-                app:checkedIconVisible="false"
-                app:chipBackgroundColor="@color/white"
-                app:chipIcon="@drawable/ic_rice_svgrepo_com"
-                app:chipIconVisible="true"
-                app:chipStrokeColor="@color/orange_500"
-                app:chipStrokeWidth="2dp" />
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:id="@+id/chip_lasagna"-->
+<!--                        style="@style/Widget.FoodStoreApp.Chip"-->
+<!--                        android:layout_marginEnd="@dimen/margin_between_elements"-->
+<!--                        android:text="@string/menu_item_lasagna"-->
+<!--                        app:checkedIconVisible="false"-->
+<!--                        app:chipBackgroundColor="@color/white"-->
+<!--                        app:chipIcon="@drawable/ic_lasagna_svgrepo_com"-->
+<!--                        app:chipIconVisible="true"-->
+<!--                        app:chipStrokeColor="@color/orange_500"-->
+<!--                        app:chipStrokeWidth="2dp" />-->
 
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:id="@+id/chip_drinks"-->
+<!--                        style="@style/Widget.FoodStoreApp.Chip"-->
+<!--                        android:layout_marginEnd="@dimen/margin_between_elements"-->
+<!--                        android:text="@string/menu_item_drinks"-->
+<!--                        app:checkedIconVisible="false"-->
+<!--                        app:chipBackgroundColor="@color/white"-->
+<!--                        app:chipIcon="@drawable/ic_drink_svgrepo_com"-->
+<!--                        app:chipIconVisible="true"-->
+<!--                        app:chipStrokeColor="@color/orange_500"-->
+<!--                        app:chipStrokeWidth="2dp" />-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chip_group_horizontal_layout"
-        tools:listitem="@layout/list_item_view" />
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:id="@+id/chip_more"-->
+<!--                        style="@style/Widget.FoodStoreApp.Chip"-->
+<!--                        android:text="@string/menu_item_more"-->
+<!--                        app:checkedIconVisible="false"-->
+<!--                        app:chipBackgroundColor="@color/white"-->
+<!--                        app:chipIcon="@drawable/ic_rice_svgrepo_com"-->
+<!--                        app:chipIconVisible="true"-->
+<!--                        app:chipStrokeColor="@color/orange_500"-->
+<!--                        app:chipStrokeWidth="2dp" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_menu_items"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chip_group_horizontal_layout"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                app:listData="@{menuViewModel.listItems}"
+                tools:listitem="@layout/list_item_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
+
+
