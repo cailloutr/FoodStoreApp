@@ -1,1 +1,1 @@
-# FoodStoreApp
+# FoodStoreApp (ongoing project)
